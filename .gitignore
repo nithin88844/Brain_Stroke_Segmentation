@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+venv/
+.env/
+.ipynb_checkpoints/
+data/
+checkpoints/
+ct_images_dataset/
+segmented_outputs/
+checkpoints_old/
+loss_logs/
