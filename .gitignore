@@ -7,6 +7,8 @@ venv/
 data/
 checkpoints/
 ct_images_dataset/
-segmented_outputs/
+segmented_outputs/ 
 checkpoints_old/
 loss_logs/
+encoder_features/
+transformer_train_dataset.pt

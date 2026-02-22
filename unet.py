@@ -67,3 +67,12 @@ class UNet(nn.Module):
         d1 = self.dec1(torch.cat([self.up1(d2), e1], dim=1))
 
         return self.final(d1)
+    
+    def forward_encoder(self, x):
+        e1 = self.enc1(x)
+        e2 = self.enc2(self.pool(e1))
+        e3 = self.enc3(self.pool(e2))
+        e4 = self.enc4(self.pool(e3))
+        b  = self.bottleneck(self.pool(e4))
+        return b
+
