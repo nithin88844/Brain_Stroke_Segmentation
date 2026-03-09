@@ -12,3 +12,5 @@ checkpoints_old/
 loss_logs/
 encoder_features/
 transformer_train_dataset.pt
+transformer_model/
+*.workspace/

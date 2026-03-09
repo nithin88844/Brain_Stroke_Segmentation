@@ -30,7 +30,9 @@ for i in tqdm(range(len(dataset))):
         for slice in volume:
             slice = slice.unsqueeze(0)  # (1, 1, H, W)
             feat = model.forward_encoder(slice)
-            feat = torch.flatten(feat, start_dim=1)  # (1, D)
+            # print(feat.shape)  # Expected: (1, D)
+            # break
+            feat = torch.mean(feat, dim=[2,3]) 
             features.append(feat.squeeze(0))
 
     features = torch.stack(features)    # (S, D)
@@ -39,7 +41,9 @@ for i in tqdm(range(len(dataset))):
         "features": features.cpu(),
         "label": label
     }, os.path.join(save_dir, f"patient_{i}.pt"))
+print("✅ Encoder features extracted and saved for all patients.")
 
+#-------------------
 
 # processed_data = torch.load("transformer_train_dataset.pt")
 

@@ -19,5 +19,5 @@ class FeatureDataset(Dataset):
 
 
 
-dataset = FeatureDataset("encoder_features")
-print(np.array(dataset[0]).shape)
+# dataset = FeatureDataset("encoder_features")
+# print(np.array(dataset[0]).shape)
